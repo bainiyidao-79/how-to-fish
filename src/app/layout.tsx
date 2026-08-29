@@ -16,7 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    // 深色主题默认开启（游戏站标配）；配色 token 见 globals.css @theme 注入点
+    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body className="min-h-screen bg-background text-foreground antialiased">
         <Header />
         <div className="mx-auto flex max-w-7xl">
