@@ -65,3 +65,22 @@
 - **结果**: 🔄 新部署 BUILDING 中（22:00 触发，commit: Rebuild How to Fish wiki）
 - **异常**: Playwright 浏览器 Vercel 登录态已失效（跳转登录页）；但 VERCEL_TOKEN API 验证可用（账号 bainiyidao-2328），后续 Vercel 操作优先走 API，浏览器仅作备用
 ---
+---
+### 2026-08-29 22:37:00 | Step 10 | game-skeleton-build（骨架重新拆解与优化）
+- **入参**: 源站=vvultimatum.net，工具=GLM 5.3 flash 视觉+HTML分析（替换原 MIMO 2.5 拆解）
+- **操作**: ① 抓源站 HTML+CSS 提取真实主题 token（dark 默认 #0a0a0c、多强调色 amber/emerald/blue）② playwright 截图+视觉模型分析布局 ③ 首页结构对照（源站有 Trending/What is/Explore/FAQ/Route CTA，旧骨架缺 3 块）
+- **结果**: ✅ 骨架库已重写 6 文件（globals.css/layout/site/HomeView/Header/Footer），新增 glow-top/glow-cta/title-line/eyebrow 工具类
+- **异常**: 无
+---
+### 2026-08-29 22:42:00 | Step 11 | 官方配色提取（讲师方法论落地）
+- **入参**: How to Fish Steam 官方头图（素材内已验证 URL）
+- **操作**: 直连被网络拦截 → 开 SS 代理（start_collect_env.sh）→ 代理下载头图 460x215 → 立即关外网 → 视觉模型提取配色
+- **结果**: ✅ 官方配色：深海蓝灰底 #1F2A36 + 渔夫背带裤橙 #D96C2B + 衬衫紫 #5B2A6B
+- **异常**: Steam CDN 直连被拦（162字节拦截页），走代理解决
+---
+### 2026-08-29 22:48:00 | Step 12 | game-site-assemble（新主题装配）+ 部署
+- **入参**: 骨架新文件同步 + 官方配色注入 @theme token + 新区块配置（topNav/trending/gameIntro/ctaBanner 全真实内容）
+- **操作**: 构建验证 → 静态服务器+playwright 截图自检 → git push（da681ce）→ Vercel 自动部署
+- **结果**: ✅ 部署 READY（22:53），线上验证：html class="dark" + Trending Now + What is + CTA 横幅全部在产线生效
+- **异常**: 本地截图 YouTube iframe 空白（无代理环境正常现象，线上视频已被扬哥确认）
+---
