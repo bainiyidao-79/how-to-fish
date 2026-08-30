@@ -84,3 +84,62 @@
 - **结果**: ✅ 部署 READY（22:53），线上验证：html class="dark" + Trending Now + What is + CTA 横幅全部在产线生效
 - **异常**: 本地截图 YouTube iframe 空白（无代理环境正常现象，线上视频已被扬哥确认）
 ---
+
+---
+### 2026-08-30 11:00:00 | Step 01 | game-seo-onboard
+- **入参**: how-to-fish（howtofish2.wiki），扬哥指令"GSC/GA 登记 + 校验技能设置"
+- **操作**: 前置检查——读 SKILL.md → 查 sitemap/robots 状态 → 查 Analytics 组件 → 查 setting.md 参数 → 查技能引用脚本 → 测 SS 代理 Google 路由
+- **结果**: 部分通过。sitemap.xml ✅（当日修复，6条URL）；robots ✅；**发现新骨架无 Analytics.tsx（技能假设失效，GA 接不上）**；setting.md 关键参数缺失（Zone ID/Vercel项目/仓库名"待提供"）；gsc_*/ga_* 脚本存在（18个）；SS Google 路由故障
+- **异常**: SS 节点到 Google 路由 000（example.com 200 正常，10:45/10:55/11:05 三测均超时；10:00 时 yt-dlp 还正常）
+---
+### 2026-08-30 11:10:00 | Step 02 | game-seo-onboard
+- **入参**: 骨架级修复 + how-to-fish-v2 同步
+- **操作**: 骨架新增 src/components/Analytics.tsx（NEXT_PUBLIC_GA_ID 驱动，未配置返回 null，anonymize_ip）+ layout.tsx 接线 + SKELETON.md 文档；同步 how-to-fish-v2 → NEXT_PUBLIC_GA_ID=G-TESTFAKE1 构建验证（G-TESTFAKE1 + googletagmanager 正确内联产物）→ push 71d7723(master)
+- **结果**: ✅ 成功。站点侧 GA 准备完成，等 G-XXXX 配 Vercel env + 空提交 redeploy 即生效
+- **异常**: 无
+---
+### 2026-08-30 11:10:00 | Step 03 | game-seo-onboard
+- **入参**: GSC 网域属性 howtofish2.wiki
+- **操作**: 计划走 GSC 添加网域资源 → Cloudflare TXT 验证 → 提交 sitemap 完整URL
+- **结果**: ⏸️ **阻塞**——SS 代理 Google 路由故障，search.google.com 无法访问（三测均失败），GSC/GA 后台操作无法进行
+- **异常**: 等代理恢复重试，或扬哥在 GSC 前台操作（选 Cloudflare 自动验证）后告知
+---
+### 2026-08-30 11:10:00 | Step 04 | game-seo-onboard
+- **入参**: GA 媒体资源 How to Fish
+- **操作**: 计划走 GA 建资源 → Web 数据流 → 取 G-XXXX → Vercel POST env → 空提交 redeploy → 线上 grep 验证
+- **结果**: ⏸️ **阻塞**（同 Step 03，Google 路由故障）；站点侧组件已就绪（Step 02），拿到 G-XXXX 后 10 分钟内可完成
+- **异常**: 同 Step 03
+---
+---
+### 2026-08-30 11:30:00 | Step 03(续) | game-seo-onboard
+- **入参**: GSC 网域属性 howtofish2.wiki
+- **操作**: 代理根因修复后重试 GSC——诊断出 DNS 污染(socks5 本地解析→假IP;改 socks5h/远程解析后 google 204)→chromium-1208 崩溃换 1237→连续 4 个脚本(gsc_howtofish_1~6)进入 GSC:脚本1成功进仪表盘(bigwalk2026.online 概览,中文UI),后续脚本全落 /about 营销页→脚本6提取链接证实:Start now 全部指向 accounts.google.com/ServiceLogin→**谷歌会话已失效(11:13后判定异常登出)**
+- **结果**: ⏸️ GSC/GA 后台操作需重新登录谷歌;本机无密码存档,需扬哥协助(远程桌面 :1 登录,或扬哥在自己浏览器完成资源创建+验证,给我 TXT 串/G-XXXX 后其余全自动)
+- **异常**: ①pkill/pgrep 自杀坑第3/4次(教训已在案) ②chromium-1208 SIGTRAP 崩溃→换 1237 解决 ③检测逻辑 false-positive(Performance 匹配营销文案)已修 ④技能脚本缺 --host-resolver-rules 的 DNS 污染缺陷已在我脚本修复
+---
+---
+### 2026-08-30 12:55:00 | Step 05 | game-seo-onboard
+- **入参**: 扬哥确认已在 :1 远程桌面完成谷歌登录
+- **操作**: 登录检测脚本确认 LOGIN_DONE(跳回GSC仪表盘) → 期间发现 howtofish2.wiki 资源已被扬哥添加(未验证) → 点击"验证您的所有权" → DNS向导切换"任何 DNS 提供商"→TXT模式 → 点复制按钮+注入div粘贴读取精确TXT记录(视觉OCR有3字符歧义,粘贴法拿到精确值 google-site-verification=TdRPasLO-GFKc9ypFUlZ-dIvaV9JKdNPc7CPUjgKiHI) → CF API 加 TXT 记录成功(记录ID fda706e10eea) → GSC 点验证 → **已完成所有权验证**
+- **结果**: ✅ GSC 网域资源 howtofish2.wiki 验证通过(bainiyidao@gmail.com)
+- **异常**: 验证按钮坐标需放大截图精确定位(957,817→955,740 两次试错);CDP 保活浏览器两次超时退出需重启
+---
+### 2026-08-30 13:00:00 | Step 06 | game-seo-onboard
+- **入参**: sitemap 提交 + GA 建资源
+- **操作**: sitemap 页输入框(432,227,756×24)填完整URL https://www.howtofish2.wiki/sitemap.xml(原子操作:单连接内输入+校验+提交) → 表格显示"成功,已发现6个网页" → GA 管理页创建媒体资源:名称"How to Fish"(时区中国GMT+8/币种人民币预填) → 行业类别=游戏 → 业务规模=小型 → 业务目标=了解网站流量 → 创建 → 数据流"howtofish"(扬哥在远程桌面协助填写,流ID 15525806804) → **衡量ID G-DT2TP3JVVE**(资源首页横幅直接显示)
+- **结果**: ✅ G-XXXX 拿到;GA 账号 404851649(Freeman) 下现有 Big Walk(551679372)/How to Fish(551957323)/phantomblade-0.wiki(550177990) 三资源
+- **异常**: GA 下一步按钮位置漂移(视觉估计与实际差130px,放大截图校正520,758);创建按钮两次超出视口(916/850)需滚动
+---
+### 2026-08-30 13:05:00 | Step 07 | game-seo-onboard
+- **入参**: NEXT_PUBLIC_GA_ID=G-DT2TP3JVVE
+- **操作**: Vercel POST /v10/projects/how-to-fish/env 创建环境变量(production/preview/development) → 空提交 203a781 触发 redeploy → dpl_9xmDeo8xim2SLeTZaXYunmFGcQ6d READY → 线上验证: 首页 HTML 含 G-DT2TP3JVVE×3 + googletagmanager×2
+- **结果**: ✅ GA 数据收集对接完成,线上生效
+- **异常**: 无
+---
+### 技能校验结论汇总(扬哥要求)
+1. ❌→✅ 技能假设站点自带 Analytics.tsx——新骨架缺失(GA配了不生效的根因)→已骨架级补齐并部署
+2. ⚠️ 技能脚本缺 --host-resolver-rules(DNS污染致GSC打不开)→已修复
+3. ⚠️ 输入源 setting.md 参数不全→已回填(Zone ID/项目名/仓库名)
+4. ✅ 18个 gsc/ga 自动化脚本存在可用
+5. ⚠️ 关代理指令 kill $(pgrep ss-local) 自匹配风险(本日第4次踩坑)→建议修订
+6. ✅ GSC/GA 全流程实测通过(网域验证+TXT+sitemap+建资源+数据流+衡量ID)

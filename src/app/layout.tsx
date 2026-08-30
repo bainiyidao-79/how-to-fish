@@ -9,6 +9,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: `${siteConfig.name} — ${siteConfig.heroSubtitle}`,
   description: siteConfig.description,
+  icons: { icon: "/favicon.ico" },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
