@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteConfig, type NavGroup } from "@/config/site";
+import { AdSlot } from "@/components/AdSlot";
 
 function NavItem({ label, href }: { label: string; href: string }) {
   const pathname = usePathname();
@@ -46,6 +47,12 @@ export function Sidebar() {
         {siteConfig.nav.map((group) => (
           <NavGroup key={group.title} group={group} />
         ))}
+        {/* 侧边栏底部广告位（菜单栏下方；ads.sidebar 留空则不渲染） */}
+        <AdSlot
+          code={siteConfig.ads?.sidebar}
+          label="Sidebar advertisement"
+          className="mt-6"
+        />
       </div>
     </aside>
   );

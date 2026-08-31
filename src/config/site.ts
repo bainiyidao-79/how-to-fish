@@ -6,6 +6,8 @@ export type NavLink = { label: string; href: string };
 export type NavGroup = { title: string; children: NavLink[] };
 
 export type SiteConfig = {
+  // 广告位：填入广告代码即生效；留空不渲染
+  ads?: { sidebar?: string; footerBanner?: string };
   name: string;
   shortName: string;
   description: string;
@@ -176,4 +178,18 @@ export const siteConfig: SiteConfig = {
         "How to Fish is available on Steam for PC.",
     },
   ],
+  ads: {
+    sidebar: `<script async="async" data-cfasync="false" src="https://pl31112755.profitableratecpmnetwork.com/09e0e9ff97264497701ef8a372063a7c/invoke.js"></script>
+<div id="container-09e0e9ff97264497701ef8a372063a7c"></div>`,
+    footerBanner: `<script>
+ atOptions = {
+ 'key' : '4b991ffec51fbc53b6d9e1f0846c03f2',
+ 'format' : 'iframe',
+ 'height' : 90,
+ 'width' : 728,
+ 'params' : {}
+ };
+</script>
+<script src="https://www.highrevenueformat.com/4b991ffec51fbc53b6d9e1f0846c03f2/invoke.js"></script>`,
+  },
 };

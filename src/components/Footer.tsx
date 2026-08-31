@@ -1,9 +1,21 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { AdFrame } from "@/components/AdFrame";
 
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-border/60 bg-background/60 py-8 text-sm text-muted-foreground">
+      {/* 页面底部 banner 广告位（页脚上方；ads.footerBanner 留空则不渲染） */}
+      {siteConfig.ads?.footerBanner && (
+        <div className="mx-auto w-full max-w-7xl px-4 pt-6">
+          <AdFrame
+            code={siteConfig.ads.footerBanner}
+            width={728}
+            height={90}
+            label="Footer banner advertisement"
+          />
+        </div>
+      )}
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p>

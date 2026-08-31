@@ -143,3 +143,10 @@
 4. ✅ 18个 gsc/ga 自动化脚本存在可用
 5. ⚠️ 关代理指令 kill $(pgrep ss-local) 自匹配风险(本日第4次踩坑)→建议修订
 6. ✅ GSC/GA 全流程实测通过(网域验证+TXT+sitemap+建资源+数据流+衡量ID)
+---
+### 2026-08-30 13:20 | favicon/logo 新增（扬哥 GSC 截图反馈驱动）
+- **排查**: how-to-fish-v2 public/ 空+layout 无 icons 配置；两代项目+旧部署文件(API)全面搜索确认**无 logo 源文件**（GSC 显示的蓝圈为谷歌默认占位图）
+- **操作**: 用站点品牌色生成钓鱼主题 favicon 全套（PIL：渔夫橙 #d96c2b 圆角底 + 白色鱼形剪影，512/192/180/32/16 + 多尺寸 .ico + webmanifest）→ layout.tsx 补 icons/manifest → 提交 a8a8b0c → Vercel READY
+- **结果**: ✅ https://www.howtofish2.wiki/favicon.ico = 200 (4640B)，head 标签齐全；视觉校验 16px 可辨认
+- **异常**: 扬哥记忆中"hotfish 有 logo"实为谷歌默认占位图——已如实说明
+---
