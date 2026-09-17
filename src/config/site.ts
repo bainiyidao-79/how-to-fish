@@ -276,19 +276,38 @@ export const siteConfig: SiteConfig = {
   },
 
   ads: {
-    /** 左右浮动竖幅（原站 sidebar 单元迁移） */
-    sideRail: `<script async="async" data-cfasync="false" src="https://pl31112755.profitableratecpmnetwork.com/09e0e9ff97264497701ef8a372063a7c/invoke.js"></script>
-<div id="container-09e0e9ff97264497701ef8a372063a7c"></div>`,
-    /** 页面底部 banner（原站 footerBanner 728×90 迁移） */
+    // 2026-09-17 广告四件套标准（单元代码存根目录 ads/*.txt；native 横版）
+    sideRailLeft: `<script>
+  atOptions = {
+    'key' : 'df6d3cceebb13431f7f653a6752710cc',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highrevenueformat.com/df6d3cceebb13431f7f653a6752710cc/invoke.js"></script>`,
+    sideRailRight: `<script>
+  atOptions = {
+    'key' : '03c77befa6a225c725a5e0182989ba0f',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highrevenueformat.com/03c77befa6a225c725a5e0182989ba0f/invoke.js"></script>`,
     footerBanner: `<script>
- atOptions = {
- 'key' : '4b991ffec51fbc53b6d9e1f0846c03f2',
- 'format' : 'iframe',
- 'height' : 90,
- 'width' : 728,
- 'params' : {}
- };
+  atOptions = {
+    'key' : '4b991ffec51fbc53b6d9e1f0846c03f2',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
 </script>
 <script src="https://www.highrevenueformat.com/4b991ffec51fbc53b6d9e1f0846c03f2/invoke.js"></script>`,
+    articleInline: `<script async="async" data-cfasync="false" src="https://pl31112755.profitableratecpmnetwork.com/09e0e9ff97264497701ef8a372063a7c/invoke.js"></script>
+<div id="container-09e0e9ff97264497701ef8a372063a7c"></div>`,
   },
 };
