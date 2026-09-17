@@ -1,0 +1,54 @@
+---
+title: "How to Fish Room Code Not Working — Every Fix That Helps"
+description: "Room codes in How to Fish stop responding over reused lobbies, hand-typed codes, MODs, CG-NAT, or proxies. Here is the full checklist, host side and joiner side."
+date: "2026-09-17"
+updated: "2026-09-17"
+category: "Multiplayer"
+keywords: ["how to fish room code not working", "how to fish invite code", "how to fish join friend", "how to fish multiplayer lobby", "how to fish room id"]
+readTime: "5 min read"
+---
+
+Nothing in How to Fish co-op is more deflating than a room code that does absolutely nothing — paste, click join, and silence. The code system is pickier than it looks: it cares about the lobby's age, the code's exact characters, everyone's MOD list, and the host's network type. Work top to bottom; the first three items fix most dead codes.
+
+<div class="art-ph"><img src="/images/multiplayer/room-code-not-working.webp" alt="A pufferfish resting on the shallows in How to Fish" loading="eager" /><figcaption>Dead room code? The lobby, not the game — here is the checklist.</figcaption></div>
+
+## Host Side First — the Code Itself
+
+Most dead codes are born at the host:
+
+- **Create a fresh private room.** Do not reuse a room from an old save session — after a game update, an old lobby's code is simply dead. New room, new code, every session.
+- **Copy-paste the full code.** Never retype it. Spaces, line breaks, or invisible characters from manual typing make the join button do nothing at all.
+- **Check the lobby isn't full or closed.** The cap is **4 players**, and a closed lobby voids its code instantly.
+
+## Everyone — MODs and Version
+
+- **All players: uninstall every MOD** before joining. One player with a MOD installed — even a "harmless" one — makes room code joins stop responding for the whole lobby.
+- **Everyone on the exact same game version**, fully updated through Steam.
+
+If your group insists on playing modded, every player must run the identical MOD loadout — but for a first working session, vanilla is the fastest path.
+
+## Network Layer — the High-Frequency Causes
+
+This is where most stubborn cases live:
+
+- **Host on a wired connection.** Wi-Fi-hosted lobbies produce codes that silently fail for joiners.
+- **Beware CG-NAT.** Campus networks and some ISP modems sit behind carrier-grade NAT — codes created there receive no response at all. Test from a different network.
+- **Both sides run a network optimizer** for How to Fish, and **close proxies/VPNs** — proxies break the P2P handshake, and the join button dies quietly.
+- **Router: enable UPnP, disable IPv6.** A large share of players report room codes springing back to life after turning IPv6 off.
+- **Quick diagnosis:** tether the PC to a phone hotspot and paste the code again. If it works on the hotspot, your home broadband's NAT is the culprit.
+
+## Joiner Side Checklist
+
+- Paste the code exactly as the host copied it — same format, no edits.
+- Be within the 4-player cap window; late joiners to a closed lobby get nothing.
+- Match the host's version and MOD-free state before clicking join.
+
+## Related Multiplayer Fixes
+
+Dead codes are one of three common co-op failures. If the code works but the screen stays black, see the [black screen fix](/multiplayer/multiplayer-black-screen-fix); if the join fails with an explicit error, see [version mismatch](/multiplayer/version-mismatch-fix).
+
+**Keep reading:**
+
+- [Multiplayer Black Screen Fix](/multiplayer/multiplayer-black-screen-fix)
+- [Version Mismatch — Causes & Fixes](/multiplayer/version-mismatch-fix)
+- [All Islands Walkthrough](/walkthrough/all-islands-walkthrough)

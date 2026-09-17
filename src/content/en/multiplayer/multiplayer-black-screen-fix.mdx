@@ -1,0 +1,69 @@
+---
+title: "How to Fish Multiplayer Black Screen Fix — 7 Working Solutions"
+description: "Black screens during How to Fish co-op usually mean version drift, overlay conflicts, or shader pre-caching. Here are the seven fixes that actually resolve it."
+date: "2026-09-17"
+updated: "2026-09-17"
+category: "Multiplayer"
+keywords: ["how to fish black screen", "how to fish multiplayer not working", "how to fish co-op fix", "how to fish connection issues", "how to fish black screen multiplayer"]
+readTime: "4 min read"
+---
+
+A black screen in How to Fish co-op almost never means your PC is dying — it means the lobby is out of sync. The game's P2P connection refuses to render until every client agrees on version and network path, and any drift shows up as an endless black screen while joining. Work through the fixes below in order; most lobbies are fixed by the first three.
+
+<div class="art-ph"><img src="/images/multiplayer/multiplayer-black-screen-fix.webp" alt="Underwater view with a weapon in How to Fish" loading="eager" /><figcaption>If the co-op screen stays black, the lobby is out of sync — not broken.</figcaption></div>
+
+## 1. Match Every Player's Game Version
+
+This is the number one cause. The host and every joining player must run the exact same game build — one person skipping a small Steam patch is enough to black-screen the whole lobby.
+
+Have everyone open Steam, let pending updates finish, and only then re-form the lobby. Version mismatch refuses the join entirely; near-miss versions black-screen it.
+
+## 2. Put Your Best Network on Host Duty
+
+The host's connection carries the session:
+
+- The player with the best wired connection hosts — not the player with the newest GPU.
+- Nobody hosts over hotel-grade Wi-Fi if a cable exists.
+- Everyone in the lobby should run a network optimizer/booster for How to Fish — the P2P handshake is sensitive to routing.
+
+## 3. Kill Every Overlay
+
+In-game overlays are notorious black-screen triggers in this engine. Disable them all before a session:
+
+- **Steam overlay**
+- **Discord overlay**
+- **GPU software overlays** (GeForce Experience / AMD Software / NVIDIA App)
+
+Any one of them can black out the join sequence — turning them all off removes the whole class of problem.
+
+## 4. Let the Game Through the Firewall
+
+Windows Firewall blocks unsigned P2P traffic by default on private networks. Allow How to Fish through the firewall (Private networks at minimum), and check that antivirus software has not quarantined any of the game's DLL files — a quarantined game file produces exactly this symptom.
+
+## 5. Verify Game Files
+
+Corrupted or modified local files fail the join check silently. In Steam: right-click How to Fish → **Properties** → **Installed Files** → **Verify integrity of game files**. Let Steam replace what it finds, then restart the game.
+
+## 6. Disable Shader Pre-Caching
+
+This one is counterintuitive but documented across the community:
+
+1. Steam → **Settings** → **Downloads** → turn off **Enable Shader Pre-Caching**.
+2. Restart Steam, launch How to Fish, and wait **1-2 minutes** in the menu before joining — shaders compile on first launch.
+3. Then join the lobby.
+
+Lobbies formed mid-compile black-screen until compilation finishes.
+
+## 7. Restart Steam Before Rejoining
+
+After any of the fixes above, fully restart Steam — not just the game. Steam holds network state from the failed session, and a clean restart clears it.
+
+## Still Black-Screened?
+
+If the lobby still refuses to render, the problem is usually one leftover: a single player on a different version, or a MOD one person forgot to remove. Our pages on [room codes not working](/multiplayer/room-code-not-working) and [version mismatch errors](/multiplayer/version-mismatch-fix) cover the adjacent failure modes.
+
+**Keep reading:**
+
+- [Room Code Not Working — Fixes](/multiplayer/room-code-not-working)
+- [Version Mismatch — Causes & Fixes](/multiplayer/version-mismatch-fix)
+- [Disable Friendly Fire](/tips/disable-friendly-fire)

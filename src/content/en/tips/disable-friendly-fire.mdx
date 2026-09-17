@@ -1,0 +1,51 @@
+---
+title: "How to Disable Friendly Fire in How to Fish — Lobby Settings, MODs & Modes"
+description: "Friendly fire in How to Fish depends on the lobby settings, installed MODs, and game mode. Here is where to check each one and what actually turns player damage off."
+date: "2026-09-17"
+updated: "2026-09-17"
+category: "Tips & Tricks"
+keywords: ["how to fish friendly fire", "how to fish disable pvp", "how to fish turn off team damage", "how to fish lobby settings", "how to fish co-op settings"]
+readTime: "3 min read"
+---
+
+How to Fish co-op runs on a physics engine that does not care whose boat you are standing on — friendly fire is real, and a mistimed shot deletes a friend's health bar as happily as a fish's. Whether you can turn it off depends on three things: the lobby settings, the MOD list, and the game mode. Check them in that order.
+
+<div class="art-ph"><img src="/images/tips/disable-friendly-fire.webp" alt="A shark circling near the surface in How to Fish" loading="eager" /><figcaption>The fish are hostile enough — here is how to stop your friends being a third faction.</figcaption></div>
+
+## Method 1 — Check the Room / Lobby Settings
+
+In multiplayer, friendly fire is usually a lobby option, not a global one:
+
+1. The **host** opens the room creation or room management screen.
+2. Look under **Game Settings** or **Room Options** for a **Friendly Fire** (or PVP) toggle.
+3. Switch it off — damage between players stops applying in that lobby.
+
+Only the host can change it, so if the toggle is missing or locked, it is a host conversation, not a settings hunt on your end.
+
+## Method 2 — Audit Your MODs
+
+MODs can force or break the game's damage rules in ways that look like unfixable friendly fire:
+
+- **Peace / no-death / god-mode MODs** can block damage rules at the engine level — including changing how player damage applies.
+- Check the game folder for **BepInEx/plugins** or a **Mods** directory; remove anything you did not consciously install, then restart the game.
+- **Host tool MODs** sometimes add commands (like /players status or damage controls) — if the lobby runs one, the host should check its documentation before touching base-game settings.
+
+Reminder: for a clean vanilla session, everyone uninstalls MODs — mismatched MOD lists also cause [version mismatch errors](/multiplayer/version-mismatch-fix), so the cleanup does double duty.
+
+## Method 3 — Confirm the Game Mode
+
+Some co-op modes keep player-vs-player damage enabled by design, while the casual/co-op default suppresses it. If your lobby has friendly fire that will not turn off, check which mode the host actually launched — switching to the standard co-op mode typically restores the no-friendly-damage default.
+
+## When You Cannot Turn It Off
+
+If the current session refuses every toggle, workarounds that work tonight:
+
+- **Spread out on the boat** before fights — blast radius discipline beats settings.
+- Adopt the [dynamite handling rules](/tips/dynamite-guide): clear escape space before every throw.
+- Rebuild the lobby fresh — some session states stick until the room is recreated.
+
+**Keep reading:**
+
+- [Dynamite Guide](/tips/dynamite-guide)
+- [Multiplayer Black Screen Fix](/multiplayer/multiplayer-black-screen-fix)
+- [Room Code Not Working — Fixes](/multiplayer/room-code-not-working)

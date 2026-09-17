@@ -1,0 +1,49 @@
+---
+title: "How to Fish Version Mismatch Error — 4 Causes and the Full Fix"
+description: "The version mismatch error in How to Fish means the lobby failed its join check. The four causes — updates, MODs, file corruption, reused rooms — and the fix for each."
+date: "2026-09-17"
+updated: "2026-09-17"
+category: "Multiplayer"
+keywords: ["how to fish version mismatch", "how to fish multiplayer error", "how to fish can't join friend", "how to fish mod conflict", "how to fish update error"]
+readTime: "4 min read"
+---
+
+The version mismatch error is How to Fish's way of saying a join check failed before the session started. Your client and the host's client disagree about something — the game build, the MOD list, the file integrity, or the lobby itself. The error names the symptom, not the cause, so here are all four causes and the fix sequence that clears them.
+
+<div class="art-ph"><img src="/images/multiplayer/version-mismatch-fix.webp" alt="A whale surfacing beside the player's boat in How to Fish" loading="eager" /><figcaption>Version mismatch blocks the join before the boat even loads — the fix is procedural, not mysterious.</figcaption></div>
+
+## What the Error Actually Means
+
+You and the host are running clients that fail the co-op join validation — the game compares builds and content between every player and refuses the session on any difference. It is a safety check, not a bug, and it fires for four specific reasons.
+
+## The 4 Causes
+
+**1. Different game builds.** Someone skipped an update. Even a small official patch splits the player pool, and the outdated client gets version mismatch on every join attempt.
+
+**2. MOD lists that don't match.** If one player has a MOD installed and the others don't — or everyone has different ones — the check fails on the spot. Vanilla co-op requires **every player's MOD list to be empty**.
+
+**3. Corrupted game files.** Missing or altered local files change the build's validation signature, which reads as a version difference even when Steam shows the same build number.
+
+**4. A reused room code.** After a game update, rooms created on the old build keep their old codes — and joining one produces exactly this error. Old lobby, dead code.
+
+## The Fix — Everyone in the Lobby Does This
+
+The check compares all clients, so the fix only works if **every player** runs the sequence:
+
+1. **Update the game.** Steam library → right-click How to Fish → let all updates finish.
+2. **Clear all Workshop MODs.** Vanilla for everyone. (Modded groups: identical full MOD loadouts on every machine — no exceptions.)
+3. **Verify files.** Right-click the game → **Properties** → **Installed Files** → **Verify integrity of game files**.
+4. **Fresh lobby.** The host fully quits the game and Steam, reopens, creates a **brand-new private room**, and shares the code by copy-paste — never by retyping.
+5. **Close VPNs and proxies** on all sides. They interfere with the join validation and can trigger a false version mismatch.
+
+## Prevention
+
+After the game patches, disband old lobbies immediately — every update invalidates codes from the previous build. And designate one player to check the MOD list before the first join of the night; it takes ten seconds and prevents the most common repeat offense.
+
+If the lobby joins but renders nothing, that is a different failure — see the [multiplayer black screen fix](/multiplayer/multiplayer-black-screen-fix). If the code itself does nothing, see [room code not working](/multiplayer/room-code-not-working).
+
+**Keep reading:**
+
+- [Multiplayer Black Screen Fix](/multiplayer/multiplayer-black-screen-fix)
+- [Room Code Not Working — Fixes](/multiplayer/room-code-not-working)
+- [Disable Friendly Fire](/tips/disable-friendly-fire)
